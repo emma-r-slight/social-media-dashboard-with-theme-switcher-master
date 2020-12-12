@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+:root {
+  --primary-green: hsl(163, 72%, 41%);
+  --primary-red: hsl(356, 69%, 56%);
+  --primary-facebook: hsl(208, 92%, 53%);
+  --primary-twitter: hsl(203, 89%, 53%);
+  --instagram: linear gradient hsl(37, 97%, 70%) to hsl(329, 70%, 58%);
+  --youTube: hsl(348, 97%, 39%);
+  --dark-theme: linear gradient hsl(210, 78%, 56%) to hsl(146, 68%, 55%);
+  --light-theme: hsl(230, 22%, 74%);
+  --theme-dark-bg: hsl(230, 17%, 14%);
+  --theme-dark-bg-top: hsl(232, 19%, 15%);
+  --theme-dark-card: hsl(228, 28%, 20%);
+  --theme-dark-text: hsl(228, 34%, 66%);
+  --theme-dark-white: hsl(0, 0%, 100%);
+  --theme-white-bg: hsl(0, 0%, 100%);
+  --theme-light-BGtop: hsl(225, 100%, 98%);
+  --theme-light-card: hsl(227, 47%, 96%);
+  --theme-light-text-light: hsl(228, 12%, 44%);
+  --theme-light-text-dark: hsl(230, 17%, 14%);
+  --measure: 60ch;
+  --ratio: 1.5;
+  --s-5: calc(var(--s-4) / var(--ratio));
+  --s-4: calc(var(--s-3) / var(--ratio));
+  --s-3: calc(var(--s-2) / var(--ratio));
+  --s-2: calc(var(--s-1) / var(--ratio));
+  --s-1: calc(var(--s0) / var(--ratio));
+  --s0: 1rem;
+  --s1: calc(var(--s0) * var(--ratio));
+  --s2: calc(var(--s1) * var(--ratio));
+  --s3: calc(var(--s2) * var(--ratio));
+  --s4: calc(var(--s3) * var(--ratio));
+  --s5: calc(var(--s4) * var(--ratio));
+}
+
+* {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  box-sizing: border-box;
+  margin: 0;
+  max-width: var(--measure);
+}
+html,
+body,
+div,
+header,
+nav,
+main,
+footer {
+  max-width: none;
+}
+
+.stack {
+  --space: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.stack * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.stack * + * {
+  margin-top: var(--space);
+}
+
+.stack:first-child {
+  margin-top: var(--space);
+}
+
+.box {
+  padding: var(--s1);
+  border: 0 solid;
+  outline: var(--border-thin) solid transparent;
+  outline-offset: calc(var(--border-thin) * -1);
+  --color-light: hsl(227, 47%, 96%);
+  --color-dark: hsl(228, 28%, 20%);
+  color: var(--color-dark);
+  background-color: var(--color-light);
+}
+.box * {
+  color: inherit;
+}
+
+.box.invert {
+  color: var(--color-light);
+  background-color: var(--color-dark);
+}
+
+/* .grid {
+  display: grid;
+  grid-gap: 1rem;
+}
+
+@supports (width: min(200px, 100%)) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+  }
+} */
+
+.switcher > * {
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc((var(--s1) / 2) * -1);
+}
+
+.switcher > * > * {
+  flex-grow: 1;
+  flex-basis: calc((var(--measure) - (100% - var(--s1))) * 999);
+  margin: calc(var(--s1) / 2);
+}
+
+.switcher > * > :nth-last-child(n + 5),
+.switcher > * > :nth-last-child(n + 5) ~ * {
+  flex-basis: 100%;
+}
+.container {
+  background: var(--theme-white-bg);
+  padding: 1.5rem 4rem;
+  height: 100vh;
+}
+
+.heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.toggle {
+  display: flex;
+  justify-content: center;
+}
