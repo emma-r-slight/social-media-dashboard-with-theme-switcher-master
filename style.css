@@ -141,7 +141,7 @@ footer {
 
 .container {
   background: var(--theme-white-bg);
-  padding: 1.5rem 4rem;
+  margin: 1.5rem var(--s5);
   height: 100vh;
 }
 
@@ -149,6 +149,20 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.title {
+  font-weight: 700;
+}
+
+.title h1 {
+  font-size: var(--s1);
+  color: var(--theme-light-text-dark);
+}
+
+.title p {
+  margin: 0.5rem;
+  color: var(--theme-light-text-light);
 }
 
 .toggle {
@@ -182,6 +196,13 @@ footer {
   font-weight: 700;
   font-size: 4em;
   color: var(--theme-light-text-dark);
+}
+
+.sub-title {
+  color: var(--theme-light-text-light);
+  font-size: 1.25rem;
+  margin-top: var(--s2);
+  margin-bottom: var(--s1);
 }
 
 .sm-box {
@@ -237,4 +258,11 @@ footer {
 .texttoday {
   font-weight: 700;
   font-size: 0.75rem;
+}
+
+.attribution {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
