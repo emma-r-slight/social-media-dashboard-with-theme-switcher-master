@@ -180,7 +180,7 @@ footer {
 
 .number {
   font-weight: 700;
-  font-size: 3em;
+  font-size: 4em;
   color: var(--theme-light-text-dark);
 }
 
@@ -226,4 +226,15 @@ footer {
   color: var(--theme-light-text-dark);
 
   font-size: 2em;
+}
+
+.text {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1ch;
+}
+
+.texttoday {
+  font-weight: 700;
+  font-size: 0.75rem;
 }
