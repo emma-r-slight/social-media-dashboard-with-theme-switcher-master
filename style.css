@@ -129,6 +129,16 @@ footer {
   flex-direction: column;
   align-items: center;
 }
+
+.with-icon {
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.with-icon .icon {
+  margin-inline-end: 0.25rem;
+}
+
 .container {
   background: var(--theme-white-bg);
   padding: 1.5rem 4rem;
@@ -164,6 +174,10 @@ footer {
   border-top: 5px solid var(--youTube);
 }
 
+.icon.large {
+  margin-inline-end: 0.5rem;
+}
+
 .number {
   font-weight: 700;
   font-size: 3em;
@@ -173,6 +187,7 @@ footer {
 .sm-box {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .row {
@@ -180,4 +195,35 @@ footer {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  font-weight: 700;
+  margin: 0.5rem;
+  width: 100%;
+}
+
+.row:first-child {
+  color: var(--theme-light-text-light);
+}
+
+/* .icon {
+  width: 0.75em;
+  width: 1cap;
+  height: 0.75em;
+  height: 1cap;
+} */
+
+.down {
+  color: var(--primary-red);
+}
+
+.up {
+  color: var(--primary-green);
+}
+
+.down .up {
+  font-weight: 400;
+}
+.number-small {
+  color: var(--theme-light-text-dark);
+
+  font-size: 2em;
 }
