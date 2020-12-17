@@ -1,24 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
-:root {
+:root[color-mode='light'] {
   --primary-green: hsl(163, 72%, 41%);
   --primary-red: hsl(356, 69%, 56%);
   --primary-facebook: hsl(208, 92%, 53%);
   --primary-twitter: hsl(203, 89%, 53%);
-
   --youTube: hsl(348, 97%, 39%);
-  --dark-theme: linear gradient hsl(210, 78%, 56%) to hsl(146, 68%, 55%);
-  --light-theme: hsl(230, 22%, 74%);
-  --theme-dark-bg: hsl(230, 17%, 14%);
-  --theme-dark-bg-top: hsl(232, 19%, 15%);
-  --theme-dark-card: hsl(228, 28%, 20%);
-  --theme-dark-text: hsl(228, 34%, 66%);
-  --theme-dark-white: hsl(0, 0%, 100%);
-  --theme-white-bg: hsl(0, 0%, 100%);
-  --theme-light-BGtop: hsl(225, 100%, 98%);
-  --theme-light-card: hsl(227, 47%, 96%);
-  --theme-light-text-light: hsl(228, 12%, 44%);
-  --theme-light-text-dark: hsl(230, 17%, 14%);
+  --dark-theme-toggle: linear gradient hsl(210, 78%, 56%) to hsl(146, 68%, 55%);
+  --light-theme-toggle: hsl(230, 22%, 74%);
+  --BG-main: hsl(0, 0%, 100%);
+  --BG-top: hsl(225, 100%, 98%);
+  --card: hsl(227, 47%, 96%);
+  --text-main: hsl(228, 12%, 44%);
+  --text-title: hsl(230, 17%, 14%);
   --measure: 60ch;
   --ratio: 1.5;
   --s-5: calc(var(--s-4) / var(--ratio));
@@ -34,6 +28,34 @@
   --s5: calc(var(--s4) * var(--ratio));
 }
 
+:root[color-mode='dark'] {
+  --BG-main: hsl(230, 17%, 14%);
+  --BG-top: hsl(232, 19%, 15%);
+  --card: hsl(228, 28%, 20%);
+  --text-main: hsl(228, 34%, 66%);
+  --text-title: hsl(0, 0%, 100%);
+  --measure: 60ch;
+  --ratio: 1.5;
+  --s-5: calc(var(--s-4) / var(--ratio));
+  --s-4: calc(var(--s-3) / var(--ratio));
+  --s-3: calc(var(--s-2) / var(--ratio));
+  --s-2: calc(var(--s-1) / var(--ratio));
+  --s-1: calc(var(--s0) / var(--ratio));
+  --s0: 1rem;
+  --s1: calc(var(--s0) * var(--ratio));
+  --s2: calc(var(--s1) * var(--ratio));
+  --s3: calc(var(--s2) * var(--ratio));
+  --s4: calc(var(--s3) * var(--ratio));
+  --s5: calc(var(--s4) * var(--ratio));
+  --primary-green: hsl(163, 72%, 41%);
+  --primary-red: hsl(356, 69%, 56%);
+  --primary-facebook: hsl(208, 92%, 53%);
+  --primary-twitter: hsl(203, 89%, 53%);
+  --youTube: hsl(348, 97%, 39%);
+  --dark-theme-toggle: linear gradient hsl(210, 78%, 56%) to hsl(146, 68%, 55%);
+  --light-theme-toggle: hsl(230, 22%, 74%);
+}
+
 * {
   font-family: 'Inter', sans-serif;
   font-size: 14px;
@@ -41,6 +63,12 @@
   margin: 0;
   max-width: var(--measure);
 }
+
+body {
+  color: var(--text-main);
+  background: var(--BG-main);
+}
+
 html,
 body,
 div,
@@ -76,19 +104,12 @@ footer {
   border: 0 solid;
   outline: var(--border-thin) solid transparent;
   outline-offset: calc(var(--border-thin) * -1);
-  --color-light: hsl(227, 47%, 96%);
-  --color-dark: hsl(228, 28%, 20%);
-  color: var(--color-dark);
-  background-color: var(--color-light);
+  color: var(--text-main);
+  background-color: var(--card);
   border-radius: 5px;
 }
 .box * {
   color: inherit;
-}
-
-.box.invert {
-  color: var(--color-light);
-  background-color: var(--color-dark);
 }
 
 /* .grid {
@@ -140,7 +161,6 @@ footer {
 }
 
 .container {
-  background: var(--theme-white-bg);
   margin: 1.5rem var(--s5);
   height: 100vh;
 }
@@ -157,12 +177,11 @@ footer {
 
 .title h1 {
   font-size: var(--s1);
-  color: var(--theme-light-text-dark);
+  color: var(--text-title);
 }
 
 .title p {
   margin: 0.5rem;
-  color: var(--theme-light-text-light);
 }
 
 .toggle {
@@ -195,11 +214,10 @@ footer {
 .number {
   font-weight: 700;
   font-size: 4em;
-  color: var(--theme-light-text-dark);
+  color: var(--text-title);
 }
 
 .sub-title {
-  color: var(--theme-light-text-light);
   font-size: 1.25rem;
   margin-top: var(--s2);
   margin-bottom: var(--s1);
@@ -222,7 +240,7 @@ footer {
 }
 
 .row:first-child {
-  color: var(--theme-light-text-light);
+  color: var(--text-main);
 }
 
 /* .icon {
@@ -244,7 +262,7 @@ footer {
   font-weight: 400;
 }
 .number-small {
-  color: var(--theme-light-text-dark);
+  color: var(--text-title);
 
   font-size: 2em;
 }
