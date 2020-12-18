@@ -6,13 +6,18 @@
   --primary-facebook: hsl(208, 92%, 53%);
   --primary-twitter: hsl(203, 89%, 53%);
   --youTube: hsl(348, 97%, 39%);
-  --dark-theme-toggle: linear gradient hsl(210, 78%, 56%) to hsl(146, 68%, 55%);
-  --light-theme-toggle: hsl(230, 22%, 74%);
+
   --BG-main: hsl(0, 0%, 100%);
   --BG-top: hsl(225, 100%, 98%);
   --card: hsl(227, 47%, 96%);
   --text-main: hsl(228, 12%, 44%);
   --text-title: hsl(230, 17%, 14%);
+  --toggle: hsl(230, 22%, 74%);
+  --toggle-active: linear-gradient(
+    to right,
+    hsl(210, 78%, 56%),
+    hsl(146, 68%, 55%)
+  );
   --measure: 60ch;
   --ratio: 1.5;
   --s-5: calc(var(--s-4) / var(--ratio));
@@ -34,6 +39,7 @@
   --card: hsl(228, 28%, 20%);
   --text-main: hsl(228, 34%, 66%);
   --text-title: hsl(0, 0%, 100%);
+
   --measure: 60ch;
   --ratio: 1.5;
   --s-5: calc(var(--s-4) / var(--ratio));
@@ -52,8 +58,12 @@
   --primary-facebook: hsl(208, 92%, 53%);
   --primary-twitter: hsl(203, 89%, 53%);
   --youTube: hsl(348, 97%, 39%);
-  --dark-theme-toggle: linear gradient hsl(210, 78%, 56%) to hsl(146, 68%, 55%);
-  --light-theme-toggle: hsl(230, 22%, 74%);
+  --toggle-active: linear-gradient(
+    to right,
+    hsl(210, 78%, 56%),
+    hsl(146, 68%, 55%)
+  );
+  --toggle: hsl(230, 22%, 74%);
 }
 
 * {
@@ -67,6 +77,7 @@
 body {
   color: var(--text-main);
   background: var(--BG-main);
+  height: 100vh;
 }
 
 html,
@@ -175,7 +186,6 @@ footer {
 
 .container {
   margin: 1.5rem var(--s5);
-  height: 100vh;
 }
 
 .heading {
@@ -197,9 +207,61 @@ footer {
   margin: 0.5rem;
 }
 
-.toggle {
+.switch {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  margin-top: 0;
+  justify-content: flex-end;
+  align-items: center;
+  font-weight: 700;
+}
+
+.switch > div {
+  margin-top: 0;
+  margin-left: 1rem;
+}
+
+.toggle {
+  margin-top: 0;
+  --width: 50px;
+  --height: calc(var(--width) / 2);
+  --border-radius: calc(var(--height) / 2);
+  display: inline-block;
+  cursor: pointer;
+}
+
+.toggle__input {
+  display: none;
+}
+
+.toggle__fill {
+  margin-top: 0;
+  position: relative;
+  width: var(--width);
+  height: var(--height);
+  border-radius: var(--border-radius);
+  background: var(--toggle);
+}
+
+.toggle__fill::after {
+  content: '';
+  position: absolute;
+  top: 1.5px;
+  left: 1.5px;
+  height: 22px;
+  width: 22px;
+  background: var(--card);
+  /* box-shadow: 0 0 5px hsl(228, 12%, 44%); */
+  border-radius: var(--border-radius);
+  transition: transform 0.2s;
+}
+
+.toggle__input:checked ~ .toggle__fill {
+  background: var(--toggle-active);
+}
+
+.toggle__input:checked ~ .toggle__fill::after {
+  transform: translateX(var(--height));
 }
 
 #facebook {
