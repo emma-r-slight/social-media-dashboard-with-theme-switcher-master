@@ -151,6 +151,19 @@ footer {
   align-items: center;
 }
 
+.title-icon {
+  display: inline-flex;
+  align-items: center;
+}
+
+.title-icon > h2 {
+  margin-top: 0;
+}
+
+.title-icon .icon {
+  vertical-align: middle;
+}
+
 .with-icon {
   display: inline-flex;
   align-items: baseline;
@@ -283,4 +296,8 @@ footer {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+.attribution p {
+  margin-top: 2rem;
 }
